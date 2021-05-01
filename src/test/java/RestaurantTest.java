@@ -80,26 +80,23 @@ class RestaurantTest {
 
 	// <<<<<<<<<<<<<<<<<<<<<<<Order>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-	/*
-	 * @Test void adding_item_should_give_correct_order_value() { restaurant = new
-	 * Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
-	 * restaurant.addToMenu("Sweet corn soup", 119);
-	 * restaurant.addToMenu("Vegetable lasagne", 269); menuItems = new
-	 * ArrayList<>(); menuItems.add("Sweet corn soup");
-	 * menuItems.add("Vegetable lasagne"); assertEquals(388,
-	 * restaurant.orderValue(menuItems)); }
-	 * 
-	 * @Test void adding_zero_items_to_the_menu_should_give_correct_order_value() {
-	 * restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime,
-	 * closingTime); menuItems = new ArrayList<>(); assertEquals(0,
-	 * restaurant.orderValue(menuItems)); }
-	 * 
-	 * @Test void orderValue_should_always_return_zero() { restaurant = new
-	 * Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
-	 * restaurant.addToMenu("Sweet corn soup", 119);
-	 * restaurant.addToMenu("Vegetable lasagne", 269); menuItems = new
-	 * ArrayList<>(); menuItems.add("Sweet corn soup");
-	 * menuItems.add("Vegetable lasagne"); assertEquals(0,
-	 * restaurant.orderValue(menuItems)); }
-	 */
+
+
+	@Test
+	void adding_zero_items_to_the_menu_should_give_correct_order_value() {
+		restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
+		menuItems = new ArrayList<>();
+		assertEquals(0, restaurant.orderValue(menuItems));
+	}
+
+	@Test
+	void orderValue_should_always_return_zero() {
+		restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
+		restaurant.addToMenu("Sweet corn soup", 119);
+		restaurant.addToMenu("Vegetable lasagne", 269);
+		menuItems = new ArrayList<>();
+		menuItems.add("Sweet corn soup");
+		menuItems.add("Vegetable lasagne");
+		assertEquals(0, restaurant.orderValue(menuItems));
+	}
 }
